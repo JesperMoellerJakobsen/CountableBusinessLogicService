@@ -1,5 +1,5 @@
 *.vs
 bin/
 obj/
-*.Development.json
 *.user
+*.Development.json
