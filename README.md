@@ -5,7 +5,7 @@ Solves concurrency issues by using a threadsafe transactional approach with opti
 
 Hosted in a docker container on &lt;HOSTNAME&gt;:5000/graphql
 
-## Instructions for interacting with microservice
+## Instructions for interacting with microservice using a browser
 
 ```
 GET <HOSTNAME>:5000/playground
