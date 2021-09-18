@@ -32,10 +32,10 @@ namespace Integrations.UserRestService
         {
             return new List<IUser>
             {
-                new User(1, "Pernille", "Sørensen", "Mail@provider.dk", new List<Permissions>()),
-                new User(2, "Lars", "Jensen", "Mail@google.eu", new List<Permissions> {Permissions.Read}),
-                new User(3, "Arne", "Jakobsen", "Mail@hotmail.dk", new List<Permissions> { Permissions.Read, Permissions.Write }),
-                new User(4, "Camilla", "Petersen", "Mail@email.com", new List<Permissions> { Permissions.Read, Permissions.WriteNegative })
+                new User(1, "Pernille", "Sørensen", "Mail@provider.dk", new List<Action>()),
+                new User(2, "Lars", "Jensen", "Mail@google.eu", new List<Action> {Action.Read}),
+                new User(3, "Arne", "Jakobsen", "Mail@hotmail.dk", new List<Action> { Action.Read, Action.Write }),
+                new User(4, "Camilla", "Petersen", "Mail@email.com", new List<Action> { Action.Read, Action.WriteNegative })
             };
         }
     }

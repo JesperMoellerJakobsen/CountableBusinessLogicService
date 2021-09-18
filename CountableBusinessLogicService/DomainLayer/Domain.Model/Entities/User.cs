@@ -8,9 +8,9 @@ namespace Domain.Model.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public IList<Permissions> ActionsAllowed { get; set; }
+        public IList<Action> ActionsAllowed { get; set; }
 
-        public User(int id, string firstName, string lastName, string email, IList<Permissions> actionsAllowed)
+        public User(int id, string firstName, string lastName, string email, IList<Action> actionsAllowed)
         {
             Id = id;
             FirstName = firstName;

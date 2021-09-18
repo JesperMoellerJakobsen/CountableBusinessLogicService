@@ -1,6 +1,6 @@
 ﻿namespace Domain.Model.Entities
 {
-    public enum Permissions
+    public enum Action
     {
         Read = 0, 
         Write = 1,

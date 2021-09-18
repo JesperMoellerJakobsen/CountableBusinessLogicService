@@ -16,9 +16,9 @@ namespace API.GraphQL
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "Version" }),
                 async context =>
                 {
-                    var input = MapInput(context);
+                    var (userId, clientVersion) = MapInput(context);
                     var counterService = serviceProvider.GetService<ICounterBusinessLogicService>();
-                    return await counterService.TryIncrement(input.userId, input.clientVersion);
+                    return await counterService.TryIncrement(userId, clientVersion);
                 });
 
             FieldAsync<BooleanGraphType>("Decrement", "Decrements the counter",
@@ -27,9 +27,9 @@ namespace API.GraphQL
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "Version" }),
                 async context =>
                 {
-                    var input = MapInput(context);
+                    var (userId, clientVersion) = MapInput(context);
                     var counterService = serviceProvider.GetService<ICounterBusinessLogicService>();
-                    return await counterService.TryDecrement(input.userId, input.clientVersion);
+                    return await counterService.TryDecrement(userId, clientVersion);
                 });
         }
 

@@ -21,7 +21,7 @@ namespace Domain.Services
         {
             var user = await _userService.GetUserById(userId);
 
-            if (!user.ActionsAllowed.Any(Permissions.Read))
+            if (!user.ActionsAllowed.Any(Action.Read))
                 throw new ActionNotPermittedException();
 
             return await _counterService.GetCounter();
@@ -31,7 +31,7 @@ namespace Domain.Services
         {
             var user = await _userService.GetUserById(userId);
 
-            if (!user.ActionsAllowed.Any(Permissions.Write, Permissions.WriteNegative))
+            if (!user.ActionsAllowed.Any(Action.Write, Action.WriteNegative))
                 throw new ActionNotPermittedException();
 
             return await _counterService.TryIncrement(currentVersion);
@@ -41,12 +41,12 @@ namespace Domain.Services
         {
             var user = await _userService.GetUserById(userId);
 
-            if (!user.ActionsAllowed.Any(Permissions.Write, Permissions.WriteNegative))
+            if (!user.ActionsAllowed.Any(Action.Write, Action.WriteNegative))
                 throw new ActionNotPermittedException();
 
-            var counter = await GetCounter(userId);
+            var counter = await _counterService.GetCounter();
 
-            if (counter.Value <= 0 && !user.ActionsAllowed.Any(Permissions.WriteNegative))
+            if (counter.Value <= 0 && !user.ActionsAllowed.Any(Action.WriteNegative))
                 throw new ActionNotPermittedException();
 
             return await _counterService.TryDecrement(currentVersion);

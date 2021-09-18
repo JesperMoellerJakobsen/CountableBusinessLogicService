@@ -11,7 +11,7 @@ namespace API.GraphQL.Model
             Field<StringGraphType>("FirstName", "FirstName of the user", resolve: context => context.Source.FirstName);
             Field<StringGraphType>("LastName", "LastName of the user", resolve: context => context.Source.LastName);
             Field<StringGraphType>("Email", "Email of the user", resolve: context => context.Source.Email);
-            Field<ListGraphType<PermissionGraphType>>("ActionsAllowed", "Permissions of the user", resolve: context => context.Source.ActionsAllowed);
+            Field<ListGraphType<PermissionGraphType>>("ActionsAllowed", "Action of the user", resolve: context => context.Source.ActionsAllowed);
         }
     }
 }

@@ -3,7 +3,7 @@ using GraphQL.Types;
 
 namespace API.GraphQL.Model
 {
-    public class PermissionGraphType : EnumerationGraphType<Permissions>
+    public class PermissionGraphType : EnumerationGraphType<Action>
     {
     }
 }
