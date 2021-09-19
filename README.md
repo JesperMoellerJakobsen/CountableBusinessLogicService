@@ -1,6 +1,6 @@
 # CountableBusinessLogicService
 
-A microservice calling an HTTP rest integration towards the [countable resource service](https://github.com/JesperMoellerJakobsen/CountableResourceService).  
+A microservice calling an HTTP rest integration consuming the [countable resource service](https://github.com/JesperMoellerJakobsen/CountableResourceService).  
 Solves concurrency issues by using a threadsafe transactional approach with optimistic locking.
 
 ## Cluster setup
