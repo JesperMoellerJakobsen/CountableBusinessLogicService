@@ -6,7 +6,7 @@ Solves concurrency issues by using a threadsafe transactional approach with opti
 ## Cluster setup
 ![Cluster setup](https://github.com/JesperMoellerJakobsen/CountableSwarm/blob/master/ArchitectureDiagram.png)
 
-## Instructions for interacting with microservice (CountableBusinessLogicService)
+## Instructions for interacting with CountableBusinessLogicService
 Hosted in a docker container on &lt;HOSTNAME&gt;:5000/ui/playground and &lt;HOSTNAME&gt;:5000/graphql
 
 GraphQL-playground hosted at:
