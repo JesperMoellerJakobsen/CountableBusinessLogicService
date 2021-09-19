@@ -4,7 +4,7 @@ using Domain.Services;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
 using Integrations.CounterRestService;
-using Integrations.UserRestService;
+using LocalStateStorage.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,7 +33,7 @@ namespace API
             services.AddSingleton<CounterQuery>();
             services.AddSingleton(_ => new CounterMicroserviceConfiguration { ServiceUrl = connectionString });
             services.AddSingleton<ICounterRestService, CounterRestService>();
-            services.AddSingleton<IUserRestService, UserRestService>();
+            services.AddSingleton<ILocalStateUserData, LocalStateUserData>();
             services.AddSingleton<ICounterBusinessLogicService, CounterBusinessLogicService>();
             services.AddHttpClient();
             services.AddGraphQL()

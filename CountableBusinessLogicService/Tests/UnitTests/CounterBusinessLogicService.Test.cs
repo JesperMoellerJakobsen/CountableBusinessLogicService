@@ -5,7 +5,7 @@ using Domain.Model.Config;
 using Domain.Model.Entities;
 using Domain.Services;
 using Integrations.CounterRestService;
-using Integrations.UserRestService;
+using LocalStateStorage.User;
 using Moq;
 using NUnit.Framework;
 using Action = Domain.Model.Entities.Action;
@@ -17,7 +17,7 @@ namespace UnitTests
     public class CounterServiceTest
     {
         private Mock<ICounterRestService> _counterService;
-        private Mock<IUserRestService> _userService;
+        private Mock<ILocalStateUserData> _userService;
         private CounterBusinessLogicService _subjectUnderTest;
         private string _counterVersion;
         private byte[] _counterVersionBytes;
@@ -30,7 +30,7 @@ namespace UnitTests
             _counterVersion = "AAAAAAAAB9M=";
             _counterVersionBytes = Convert.FromBase64String(_counterVersion);
             _counterService = new Mock<ICounterRestService>();
-            _userService = new Mock<IUserRestService>();
+            _userService = new Mock<ILocalStateUserData>();
             _subjectUnderTest = new CounterBusinessLogicService(_counterService.Object, _userService.Object);
             _returnObject = new Counter
             {

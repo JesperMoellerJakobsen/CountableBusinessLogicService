@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DataLayer\Integrations\Integrations.csproj" />
+    <ProjectReference Include="..\..\DataLayer\LocalStateStorage\LocalStateStorage.csproj" />
     <ProjectReference Include="..\Domain.Model\Domain.Model.csproj" />
   </ItemGroup>
 

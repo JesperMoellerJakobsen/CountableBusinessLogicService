@@ -3,7 +3,7 @@ using Domain.Services;
 using GraphQL.Types;
 using API.GraphQL.Model;
 using GraphQL;
-using Integrations.UserRestService;
+using LocalStateStorage.User;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace API.GraphQL
@@ -27,7 +27,7 @@ namespace API.GraphQL
             FieldAsync<ListGraphType<UserGraphType>>("users", "Retrieves users", null,
                 async _ =>
             {
-                var userService = serviceProvider.GetService<IUserRestService>();
+                var userService = serviceProvider.GetService<ILocalStateUserData>();
                 return await userService.GetAllUsers();
             });
         }
