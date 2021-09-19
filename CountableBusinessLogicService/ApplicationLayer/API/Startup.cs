@@ -4,6 +4,7 @@ using Domain.Services;
 using GraphQL.Server;
 using GraphQL.Server.Ui.Playground;
 using Integrations.CounterRestService;
+using LocalStateStorage.Counter;
 using LocalStateStorage.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,8 @@ namespace API
             services.AddSingleton<ICounterRestService, CounterRestService>();
             services.AddSingleton<ILocalStateUserData, LocalStateUserData>();
             services.AddSingleton<ICounterBusinessLogicService, CounterBusinessLogicService>();
+            services.AddSingleton<ILocalStateCounterData, LocalStateCounterData>();
+            services.AddSingleton<ILocalStateUserData, LocalStateUserData>();
             services.AddHttpClient();
             services.AddGraphQL()
                 .AddGraphTypes()
