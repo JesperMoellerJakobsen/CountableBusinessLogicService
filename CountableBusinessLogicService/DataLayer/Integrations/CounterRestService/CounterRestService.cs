@@ -36,10 +36,10 @@ namespace Integrations.CounterRestService
 
         private async Task<bool> Execute(byte[] currentVersion, PatchOptionType type)
         {
-            var counterArgs = new PatchArgs(currentVersion, type);
-            var jsonToSend = JsonConvert.SerializeObject(counterArgs);
-            var httpContent = new StringContent(jsonToSend, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PatchAsync(_serviceUrl, httpContent);
+            var patchArgs = new PatchArgs(currentVersion, type);
+            var json = JsonConvert.SerializeObject(patchArgs);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(_serviceUrl, content);
             return response.IsSuccessStatusCode;
         }
     }

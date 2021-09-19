@@ -7,7 +7,7 @@ namespace Domain.Model.Config
     {
         public static bool Any<T>(this IEnumerable<T> list, params T[] enums)
         {
-            return list.Any(x => enums.Contains(x));
+            return enums != null && list.Any(enums.Contains);
         }
     }
 }
