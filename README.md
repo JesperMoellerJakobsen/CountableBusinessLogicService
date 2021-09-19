@@ -1,7 +1,6 @@
 # CountableBusinessLogicService
 
-A microservice calling an HTTP rest integration consuming the [countable resource service](https://github.com/JesperMoellerJakobsen/CountableResourceService).  
-Solves concurrency issues by using a threadsafe transactional approach with optimistic locking.
+A microservice calling an HTTP rest integration consuming the [countable resource service](https://github.com/JesperMoellerJakobsen/CountableResourceService). Exposes a GraphQL endpoint for the user.
 
 ## Cluster setup
 ![Cluster setup](https://github.com/JesperMoellerJakobsen/CountableSwarm/blob/master/ArchitectureDiagram.png)
